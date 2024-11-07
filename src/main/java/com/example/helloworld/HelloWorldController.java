@@ -18,4 +18,9 @@ public class HelloWorldController {
     public ResponseEntity<String> sayHelloTR() {
         return ResponseEntity.ok("Merhaba Dünya!");
     }
+
+    @GetMapping("jp")
+    public ResponseEntity<String> sayHelloJP() {
+        return ResponseEntity.ok("Konnichiwa Sekai!");
+    }
 }
