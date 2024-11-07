@@ -2,7 +2,9 @@ version: '3.8'
 
 services:
   s_helloworld:
-    image: hello-world:test
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: c_helloworld
     ports:
       - "8085:8085"
