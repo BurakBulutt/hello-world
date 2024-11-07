@@ -8,16 +8,10 @@ services:
     container_name: c_helloworld
     ports:
       - "8085:8085"
-    restart: always
-    deploy:
-      replicas: 1
-      restart_policy:
-        condition: on-failure
-        max_attempts: 3
-        delay: 10s
+    restart: on-failure
     healthcheck:
-      test: ["CMD","curl","-f http://localhost:8085/actuator/health"]
+      test: ["CMD","curl","-f","http://localhost:8085/actuator/health"]
       interval: 5s
-      timeout: 3s
-      start_period: 5s
+      timeout: 30s
+      start_period: 10s
       retries: 3

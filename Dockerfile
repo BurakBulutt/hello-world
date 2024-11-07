@@ -1,16 +1,8 @@
-FROM maven:3-amazoncorretto-17-alpine as build
-
-WORKDIR /app
-
-COPY . .
-
-RUN mvn clean package
-
 FROM openjdk:17
 
 WORKDIR /app
 
-COPY --from=build /app/target/*jar hello_world.jar
+COPY target/*jar hello_world.jar
 
 EXPOSE 8085
 
