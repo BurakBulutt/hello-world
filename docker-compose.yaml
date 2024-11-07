@@ -14,7 +14,7 @@ services:
         max_attempts: 3
         delay: 10s
     healthcheck:
-      test: ["CMD","curl","-f","http://localhost:8085/actuator/health"]
+      test: ["CMD","curl","-f http://localhost:8085/actuator/health"]
       interval: 5s
       timeout: 3s
       start_period: 5s
