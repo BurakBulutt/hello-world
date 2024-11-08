@@ -23,4 +23,9 @@ public class HelloWorldController {
     public ResponseEntity<String> sayHelloJP() {
         return ResponseEntity.ok("Konnichiwa Sekai!");
     }
+
+    @GetMapping("fr")
+    public ResponseEntity<String> sayHelloFR() {
+        return ResponseEntity.ok("Bonjour le Monde!");
+    }
 }
